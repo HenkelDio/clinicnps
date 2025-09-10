@@ -37,14 +37,6 @@ export default defineConfig((/* ctx */) => {
         node: 'node20',
       },
 
-      vite: {
-        build: {
-          rollupOptions: {
-            external: ['axios'],
-          },
-        },
-      },
-
       typescript: {
         strict: true,
         vueShim: true,
