@@ -3,8 +3,31 @@ import type { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
+    children: [{ path: '', component: () => import('pages/LoginPage.vue') }],
+  },
+
+  {
+    path: '/dashboard',
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+  },
+
+  {
+    path: '/nps',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/NPSPage.vue') }],
+  },
+
+  {
+    path: '/users',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/UserPage.vue') }],
+  },
+
+  {
+    path: '/profile',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/PlaceholderPage.vue') }],
   },
 
   // Always leave this as last one,
